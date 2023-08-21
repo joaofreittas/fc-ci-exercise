@@ -34,7 +34,7 @@ jobs:
                   restore-keys: ${{ runner.os }}-m2
 
             - name: SonarCloud Scan
+              run: ./mvnw -B verify sonar:sonar -Dsonar.projectKey=joaofreittas_fc-ci-exercise -Dsonar.organization=joaofreittas-1 -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$SONAR_TOKEN
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
                   SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-              run: ./mvnw -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=joaofreittas_fc-ci-exercise

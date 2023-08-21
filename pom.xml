@@ -17,6 +17,8 @@
 		<java.version>17</java.version>
 		<sonar.organization>joaofreittas</sonar.organization>
 		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
+		<sonar.projectKey>joaofreittas_fc-ci-exercise</sonar.projectKey>
+		<sonar.organization>joaofreittas-1</sonar.organization>
 		<sonar.exclusions>
 			**/**Application.java
 		</sonar.exclusions>
