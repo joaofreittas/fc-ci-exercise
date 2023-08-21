@@ -37,7 +37,7 @@ jobs:
               run: ./mvnw clean verify
 
             - name: SonarCloud Scan
-              run: ./mvnw -B verify sonar:sonar -Dsonar.projectKey=joaofreittas_fc-ci-exercise -Dsonar.organization=joaofreittas-1 -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$SONAR_TOKEN
+              run: ./mvnw -B verify sonar:sonar -Pcoverage -Dsonar.projectKey=joaofreittas_fc-ci-exercise -Dsonar.organization=joaofreittas-1 -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$SONAR_TOKEN
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
                   SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
