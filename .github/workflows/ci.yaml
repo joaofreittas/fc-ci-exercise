@@ -33,6 +33,9 @@ jobs:
                   key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
                   restore-keys: ${{ runner.os }}-m2
 
+            - name: Unit Tests
+              run: /.mvnw clean test
+
             - name: SonarCloud Scan
               run: ./mvnw -B verify sonar:sonar -Dsonar.projectKey=joaofreittas_fc-ci-exercise -Dsonar.organization=joaofreittas-1 -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$SONAR_TOKEN
               env:
