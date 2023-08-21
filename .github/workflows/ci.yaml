@@ -34,7 +34,7 @@ jobs:
                   restore-keys: ${{ runner.os }}-m2
 
             - name: SonarCloud Scan
-              uses: SonarSource/sonarcloud-github-action@master
+              run: ./mvnw -B verify sonar:sonar -Dsonar.projectKey=joaofreittas_fc-ci-exercise -Dsonar.organization=joaofreittas-1 -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$SONAR_TOKEN
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
                   SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
